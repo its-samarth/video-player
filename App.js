@@ -1,20 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
+import React from 'react';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import VideoPlayer from 'react-native-media-console';
+import { AppLoading } from 'expo';
+import { Constants } from 'expo';
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={{ flex: 1 }}>
+      <View>
+        <VideoPlayer source={{ uri: 'https://vjs.zencdn.net/v/oceans.mp4' }} />
+      </View>
     </View>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
